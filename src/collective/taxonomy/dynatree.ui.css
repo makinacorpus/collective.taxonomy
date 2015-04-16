@@ -325,6 +325,11 @@ span.dynatree-active a
 	color: white !important; /* @ IE6 */
 }
 
+span.dynatree-active a input#editNode
+{
+    color: black !important;
+}
+
 /*******************************************************************************
  * Drag'n'drop support
  */
