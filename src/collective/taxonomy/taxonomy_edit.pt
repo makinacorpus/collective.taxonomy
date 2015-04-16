@@ -98,6 +98,7 @@
           var tree = $('#tree').dynatree('getTree').toDict();
           $.ajax({
             'url': $('#jsonUrl').val(),
+            'headers': {'X-CSRF-TOKEN': $('input[name="_authenticator"]').val()},
             'type': "POST",
             'data': {'data': JSON.stringify(tree), 'update_taxonomy': true},
             'success': function(data) {
@@ -127,6 +128,7 @@
     <button class="linkButton" id="removeNode" i18n:translate="">Delete node</button>
     <button class="linkButton" id="saveTree" i18n:translate="">Save</button>
     <button class="linkButton" id="back" i18n:translate="">Back</button>
+    <span tal:replace="structure context/@@authenticator/authenticator"/>
     <input type="hidden" id="jsonUrl"
            tal:attributes="value string:${view/portalUrl}/@@taxonomy-json?taxonomy=${request/form.widgets.taxonomy}"/>
     <input type="hidden" id="successUrl"
