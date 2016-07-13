@@ -38,10 +38,10 @@ setup(
         'setuptools',
         'plone.supermodel',
         'plone.app.registry',
-        'plone.app.dexterity[grok]',
+        'plone.app.dexterity',
         'elementtree',
         'simplejson',
-        'collective.js.jqueryui',
+#        'collective.js.jqueryui',
     ],
     extras_require={
         'test': [
